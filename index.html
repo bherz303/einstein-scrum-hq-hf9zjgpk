@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<title>Scrum Scorecard System · Project HQ</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Bebas+Neue&display=swap');
+
+  :root {
+    --orange: #EF8B22;
+    --blue:   #0979C3;
+    --navy:   #1B3A5C;
+    --ink:    #2A2A2A;
+    --gray:   #6B6B6B;
+    --light:  #F7F5F1;
+    --line:   #E5E1DA;
+    --teal:   #0E8F84;
+    --red:    #C0392B;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Roboto', -apple-system, sans-serif;
+    background: var(--light);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+
+  .wrap { max-width: 1020px; margin: 0 auto; padding: 56px 36px 100px; }
+
+  .eyebrow {
+    font-size: .72rem; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 10px;
+  }
+  h1 {
+    font-family: 'Bebas Neue', sans-serif; font-size: 3.4rem; line-height: 1;
+    letter-spacing: 1px; color: var(--navy); margin-bottom: 12px;
+  }
+  .lede { font-size: 1.05rem; color: var(--gray); max-width: 760px; }
+  .meta { font-size: .78rem; color: #999; margin-top: 12px; }
+  .header-links { margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .header-links a {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--navy); color: #fff; text-decoration: none;
+    font-size: .82rem; font-weight: 700; padding: 9px 18px;
+    border-radius: 8px; letter-spacing: .3px;
+  }
+  .header-links a.primary { background: var(--orange); }
+
+  .feature {
+    margin-top: 36px; background: #fff; border: 1px solid var(--line);
+    border-left: 4px solid var(--orange); border-radius: 12px; padding: 26px 28px;
+  }
+  .feature .ft-eyebrow {
+    font-size: .68rem; font-weight: 800; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 8px;
+  }
+  .feature h2 { font-size: 1.35rem; color: var(--navy); margin-bottom: 10px; }
+  .feature p { font-size: .95rem; color: var(--gray); margin-bottom: 14px; }
+  .stat-row { display: flex; gap: 34px; flex-wrap: wrap; margin: 18px 0 6px; }
+  .stat-val { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--navy); line-height: 1; }
+  .stat-label { font-size: .74rem; color: var(--gray); margin-top: 4px; }
+
+  .section-head { margin-top: 64px; margin-bottom: 24px; }
+  .section-head h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2.1rem; letter-spacing: .5px; color: var(--navy); }
+  .section-head p { font-size: .92rem; color: var(--gray); max-width: 720px; margin-top: 6px; }
+
+  .phases { display: flex; flex-direction: column; gap: 14px; }
+  .phase {
+    display: flex; gap: 20px; background: #fff; border: 1px solid var(--line);
+    border-radius: 12px; padding: 22px 24px;
+  }
+  .ph-num {
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; color: var(--line);
+    min-width: 44px; line-height: 1;
+  }
+  .phase h3 { font-size: 1.02rem; color: var(--navy); margin-bottom: 6px; }
+  .phase p { font-size: .88rem; color: var(--gray); }
+  .ph-status {
+    display: inline-block; font-size: .64rem; font-weight: 800; letter-spacing: 1.5px;
+    text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-left: 8px;
+    vertical-align: 2px; background: #eee; color: var(--gray);
+  }
+  .phase.done   { border-left: 4px solid var(--teal); }
+  .phase.done .ph-status { background: #E2F3F1; color: var(--teal); }
+  .phase.now    { border-left: 4px solid var(--orange); }
+  .phase.now .ph-status  { background: #FDEEDC; color: var(--orange); }
+  .phase.next   { border-left: 4px solid var(--line); opacity: .85; }
+  .item-list { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
+  .item { font-size: .85rem; color: var(--ink); padding-left: 22px; position: relative; }
+  .item::before { content: '○'; position: absolute; left: 0; color: var(--gray); }
+  .item.done::before { content: '●'; color: var(--teal); }
+  .item .added { font-size: .72rem; color: var(--orange); font-weight: 700; }
+
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; }
+  .card-icon { font-size: 1.4rem; margin-bottom: 10px; }
+  .card h3 { font-size: .98rem; color: var(--navy); margin-bottom: 6px; }
+  .card p { font-size: .84rem; color: var(--gray); margin-bottom: 10px; }
+  .card-links { display: flex; flex-direction: column; gap: 4px; }
+  .card-links a { font-size: .82rem; color: var(--blue); text-decoration: none; font-weight: 500; }
+  .card-links a:hover { text-decoration: underline; }
+  .card-links .muted { font-size: .76rem; color: #999; }
+
+  .changelog { display: flex; flex-direction: column; gap: 0; }
+  .log-entry {
+    display: flex; gap: 20px; padding: 16px 4px; border-bottom: 1px solid var(--line);
+  }
+  .log-date {
+    font-family: 'Bebas Neue', sans-serif; font-size: 1rem; color: var(--orange);
+    min-width: 92px; letter-spacing: .5px; padding-top: 2px;
+  }
+  .log-body { font-size: .88rem; color: var(--ink); }
+  .log-body .next { color: var(--gray); font-size: .82rem; display: block; margin-top: 3px; }
+
+  .q-list { display: flex; flex-direction: column; gap: 12px; }
+  .q-item { display: flex; gap: 16px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
+  .q-num {
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: var(--orange);
+    min-width: 28px; line-height: 1.2;
+  }
+  .q-text { font-size: .88rem; color: var(--ink); }
+
+  footer { margin-top: 80px; font-size: .74rem; color: #999; border-top: 1px solid var(--line); padding-top: 18px; }
+
+  @media (max-width: 640px) {
+    .wrap { padding: 36px 20px 70px; }
+    h1 { font-size: 2.4rem; }
+    .phase, .q-item, .log-entry { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">CTXH Regional · Project HQ</div>
+  <h1>Scrum Scorecard System</h1>
+  <p class="lede">
+    A live scoring, tracking, and training system for the 5 CTXH branch Monday boards — turns board hygiene
+    from a gut call into a graded, trend-tracked, coachable standard. Covers the 12-criterion rubric,
+    a manager-facing reference sheet, a live performance dashboard with full scorecard detail per read,
+    and a hands-on training board with automations that mirror the real branch boards.
+    "Done" looks like: every CTXH manager can self-check their board against a public rubric, Brian can
+    grade any branch in minutes with a defensible score, and new managers certify on a mock board before
+    ever touching a live one.
+  </p>
+  <p class="meta">Owner: Brian Herzig · Built with: Vera (Brian's AI Chief of Staff) · Started: 6/15/2026 · Folder: cos-vera/tools/</p>
+
+  <div class="header-links">
+    <a class="primary" href="https://bherz303.github.io/emco-scrum-mgr-npnv1jka/dashboard.html">Performance Dashboard →</a>
+    <a href="https://bherz303.github.io/emco-scrum-mgr-npnv1jka/">Manager Reference Sheet</a>
+    <a href="https://einsteinmoving.monday.com/boards/18421168407">Mock Training Board</a>
+  </div>
+
+
+  <div class="feature">
+    <div class="ft-eyebrow">Where it stands today</div>
+    <h2>Live and scoring — region average climbing week over week under the current rubric.</h2>
+    <p>
+      Rubric is stable at v1.3 after three correction rounds (damage-pulse exclusion, sub-item context credit,
+      Velocity Check LOW/duplicate exceptions, bulk-cleanup exemption). 24 scorecard reads logged since
+      tracking began; the two most recent full-region reads (7/13, 7/14) show every branch at B or better,
+      with Leander hitting a perfect 60/60. Training board is built and stocked with 16 seeded errors plus
+      3 decoy patterns and real status-driven automations mirroring Sky Board. Rippling delivery module and
+      the BM live-walkthrough checklist are still open.
+    </p>
+    <div class="stat-row">
+      <div><div class="stat-val">5</div><div class="stat-label">branches tracked</div></div>
+      <div><div class="stat-val">v1.3</div><div class="stat-label">current rubric</div></div>
+      <div><div class="stat-val">24</div><div class="stat-label">scorecard reads logged</div></div>
+      <div><div class="stat-val">60/60</div><div class="stat-label">best score to date (Leander, 7/13)</div></div>
+    </div>
+  </div>
+
+
+  <div class="section-head">
+    <div class="eyebrow">Progression</div>
+    <h2>The roadmap</h2>
+    <p>Where this project has been, where it is now, and what comes next.</p>
+  </div>
+
+  <div class="phases">
+
+    <div class="phase done">
+      <div class="ph-num">01</div>
+      <div>
+        <h3>Rubric &amp; Scoring Engine <span class="ph-status">Done</span></h3>
+        <p>Built the 12-criterion Board Hygiene rubric (60 pts) from the Scrum University Scorecard, then hardened it through three real-world correction rounds.</p>
+        <div class="item-list">
+          <div class="item done">10 standard + 2 bonus criteria defined, each with Green/Yellow/Red thresholds</div>
+          <div class="item done">scrum-check skill built — pulls live Monday board data, scores, produces coaching-ready findings</div>
+          <div class="item done">Individual per-manager breakdown (30 pts, 6 sub-criteria) added</div>
+          <div class="item done">Correction: sales blocks on different days are not duplicates <span class="added">(added 6/29)</span></div>
+          <div class="item done">Correction: damage pulses/claims excluded from Updates and Definition-of-Done <span class="added">(added 7/8)</span></div>
+          <div class="item done">Correction: sub-items count as valid update context, not just top-level updates <span class="added">(added 7/13)</span></div>
+          <div class="item done">Correction: Velocity Check pulse exempt from LOW scoring and may be split per-person without counting as a duplicate <span class="added">(added 7/14)</span></div>
+          <div class="item done">Correction: bulk template/reference cleanup doesn't ding Automations unless it hits active pulses <span class="added">(added 7/14)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase done">
+      <div class="ph-num">02</div>
+      <div>
+        <h3>Manager Reference Sheet <span class="ph-status">Done</span></h3>
+        <p>Published, branded, shareable HTML page explaining every criterion, scoring tier, and quick-win tip — so managers know exactly what's graded before they're graded on it.</p>
+        <div class="item-list">
+          <div class="item done">All 12 criteria + scoring tiers + grade scale documented in plain language</div>
+          <div class="item done">"5 Things That Move Your Score the Most" quick-win section</div>
+          <div class="item done">Published to GitHub Pages (noindexed, robots.txt) under bherz303</div>
+          <div class="item done">Kept in sync with every rubric correction as they landed</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase done">
+      <div class="ph-num">03</div>
+      <div>
+        <h3>Performance Dashboard <span class="ph-status">Done</span></h3>
+        <p>Live, filterable, click-through dashboard tracking every scorecard read across all 5 branches.</p>
+        <div class="item-list">
+          <div class="item done">Trend chart + running per-branch average score and grade</div>
+          <div class="item done">Date-range filter: Lifetime / Last 7 days / Last 30 days / This Quarter / custom range</div>
+          <div class="item done">Click any history row → full scorecard modal with per-criterion findings, action items, individual breakdown</div>
+          <div class="item done">Copy-to-clipboard button — paste a full scorecard straight to a manager</div>
+          <div class="item done">Pre-6/29 legacy-rubric reads dropped from display (kept in source JSON for archival)</div>
+          <div class="item done">Backfilled and hand-verified scores recovered from 4 archived sessions (6/29–7/8)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase now">
+      <div class="ph-num">04</div>
+      <div>
+        <h3>Training Program <span class="ph-status">Now</span></h3>
+        <p>3-stage curriculum (Learn/Work/Lead the Board) plus a hands-on mock practice board with seeded errors and real automations mirroring Sky Board.</p>
+        <div class="item-list">
+          <div class="item done">training-module.md — 3-stage curriculum with self-checks tied to every rubric criterion</div>
+          <div class="item done">Mock Practice Board built on Monday (18421168407) with 16 seeded errors + 3 decoy patterns</div>
+          <div class="item done">Board automations mirror Sky Board functionality (status→group moves, Today auto-date-stamp) — structure only, no content copied</div>
+          <div class="item done">Clean example pulses added to every group (was: Hold for Sync Up empty) so trainees see right vs. wrong side by side</div>
+          <div class="item">Rippling delivery module — not yet built (framework calls for Rippling as the assignment/tracking platform)</div>
+          <div class="item">BM live walkthrough checklist — 30-min first-week 1:1 structure, not yet built</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase next">
+      <div class="ph-num">05</div>
+      <div>
+        <h3>Region Rollout <span class="ph-status">Next</span></h3>
+        <p>Get all 5 CTXH managers certifying against the mock board and running weekly self-checks against the live rubric, gated on Phase 04 closing out.</p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="section-head">
+    <div class="eyebrow">Deliverables</div>
+    <h2>Everything this project has produced</h2>
+    <p>Every doc, tool, and board — one card each, linked at the source.</p>
+  </div>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>Performance Dashboard</h3>
+      <p>Live scorecard history across all 5 branches — trend chart, running averages, click-through detail, date filters.</p>
+      <div class="card-links">
+        <a href="https://bherz303.github.io/emco-scrum-mgr-npnv1jka/dashboard.html">Open dashboard →</a>
+        <span class="muted">Repo: tools/scrum-dashboard.html · data: tools/scrum-scores.json</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📋</div>
+      <h3>Manager Reference Sheet</h3>
+      <p>The public rubric — every criterion, scoring tier, and coaching tip, in plain language.</p>
+      <div class="card-links">
+        <a href="https://bherz303.github.io/emco-scrum-mgr-npnv1jka/">Open reference sheet →</a>
+        <span class="muted">Repo: tools/scrum-scorecard-reference.html</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🧩</div>
+      <h3>scrum-check skill</h3>
+      <p>Pulls live Monday board data, scores against the 12-criterion rubric, logs to the dashboard.</p>
+      <div class="card-links">
+        <span class="muted">Repo: .claude/skills/scrum-check/SKILL.md</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🎓</div>
+      <h3>Training Module</h3>
+      <p>3-stage curriculum — Learn the Board, Work the Board, Lead the Sync — with self-checks tied to the rubric.</p>
+      <div class="card-links">
+        <span class="muted">Repo: tools/scrum-training/training-module.md</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🖥️</div>
+      <h3>Mock Practice Board</h3>
+      <p>Live Monday board seeded with 16 errors + 3 decoy patterns, wired with Sky-Board-style automations, used for hands-on certification.</p>
+      <div class="card-links">
+        <a href="https://einsteinmoving.monday.com/boards/18421168407">Open board →</a>
+        <span class="muted">Outline + answer key: tools/scrum-training/mock-board-outline.md</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🗂️</div>
+      <h3>Rubric Version History</h3>
+      <p>v1.0 → v1.2 → v1.3 — every correction and why it changed, so old scores stay interpretable.</p>
+      <div class="card-links">
+        <span class="muted">In: tools/scrum-scores.json → meta.rubric_notes</span>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="section-head">
+    <div class="eyebrow">Running log</div>
+    <h2>Changelog</h2>
+    <p>One dated entry per working session — what changed, what's next. Newest first.</p>
+  </div>
+
+  <div class="changelog">
+
+    <div class="log-entry">
+      <div class="log-date">7/16/2026</div>
+      <div class="log-body">
+        Installed the network's /project-hq skill and built this HQ page to consolidate the system.
+        Also mirrored Sky Board's status→group automations onto the mock training board and stocked every
+        group with clean example pulses (Hold for Sync Up was empty), then added 3 more broken LOWs and
+        5 more Inbox items to triage, including 2 legitimate decoy patterns.
+        <span class="next">Next: build the Rippling delivery module, or start the BM live-walkthrough checklist.</span>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">7/14/2026</div>
+      <div class="log-body">
+        Ran North Austin (55/60), Houston (56→58/60 after correction), South Austin (48→50/60 after
+        correction) for 7/14. Two rubric corrections landed same-day: Velocity Check pulse exempt from
+        LOW scoring and may split per-person without counting as a duplicate; bulk template-pulse cleanup
+        no longer dings Automations unless it hits active work.
+        <span class="next">Next: keep running weekly reads; consider rolling the two 7/14 corrections into the reference sheet's "quick win" section.</span>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">7/13/2026</div>
+      <div class="log-body">
+        San Antonio (58/60, A) and Leander (56→60/60 after 2 corrections) scored — Leander hit a perfect
+        score once sub-items were confirmed as valid update context. Added the dashboard's click-through
+        scorecard modal with copy-to-clipboard, added running per-branch average + grade to each card, and
+        added date-range filtering (week/month/quarter/lifetime/custom).
+        <span class="next">Next: keep the per-criteria detail capture going on every new read so all history stays click-through-able.</span>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">7/9/2026</div>
+      <div class="log-body">
+        First clean v1.3-rubric read (North Austin, 50/60). Recovered and backfilled 12 historical
+        scorecard runs from 4 archived sessions (6/29–7/8) after Brian asked to check for prior grades.
+        Corrected several buggy low reads where LOW columns weren't detected due to per-board column-ID
+        variance. Dropped all pre-6/29 legacy-rubric scores from the dashboard display.
+        <span class="next">Next: keep the weekly cadence going and start planning the training rollout.</span>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">7/8/2026</div>
+      <div class="log-body">
+        Built the mock training board outline (13 seeded errors + answer key) and the 3-stage training
+        module. Damage-pulse exclusion rule added to Updates and Definition-of-Done after Brian flagged
+        that damage claims typically don't carry updates.
+        <span class="next">Next: actually build the mock board on Monday (was just a spec).</span>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">6/15/2026 – 6/23/2026</div>
+      <div class="log-body">
+        System kickoff: built the 12-criterion rubric from the Scrum University Scorecard app, the
+        scrum-check skill, and the first published reference sheet. First live scorecard reads run
+        against all 5 CTXH branches (region average ~50%, all F-grade under the original rubric).
+        <span class="next">Next: get the dashboard built so scores stop living only in chat transcripts.</span>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="section-head">
+    <div class="eyebrow">Decision needed</div>
+    <h2>Open questions for Brian</h2>
+    <p>These aren't agent tasks — they're calls only Brian can make.</p>
+  </div>
+
+  <div class="q-list">
+    <div class="q-item">
+      <div class="q-num">1</div>
+      <div class="q-text"><strong>Rippling as the training delivery platform — build it now, or after region rollout starts?</strong> The original onboarding framework named Rippling as the system of record for assignment/tracking, but the training module currently lives as a standalone doc + Monday mock board. Worth deciding whether to build the Rippling module before or after the first manager runs through it.</div>
+    </div>
+    <div class="q-item">
+      <div class="q-num">2</div>
+      <div class="q-text"><strong>Weekly cadence for scorecard reads — formalize it?</strong> Reads have been run ad hoc (roughly weekly) so far. Worth deciding if this becomes a standing Thursday/Friday `/scrum-check` for all 5 branches, or stays reactive.</div>
+    </div>
+    <div class="q-item">
+      <div class="q-num">3</div>
+      <div class="q-text"><strong>Publish the training module + mock board outline publicly, or keep internal-only?</strong> The reference sheet and dashboard are already on GitHub Pages (noindexed). The training docs currently live only in the repo — could get the same treatment if managers need self-serve access.</div>
+    </div>
+  </div>
+
+
+  <footer>
+    Scrum Scorecard System · Project HQ · maintained by Vera (Brian's AI Chief of Staff) · last updated 7/16/2026 ·
+    internal use — do not share outside Einstein without Brian's OK
+  </footer>
+
+</div>
+</body>
+</html>
