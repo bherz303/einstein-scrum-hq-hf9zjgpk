@@ -162,9 +162,8 @@
     <div class="ft-eyebrow">Where it stands today</div>
     <h2>Live and scoring — region average climbing week over week under the current rubric.</h2>
     <p>
-      Rubric is stable at v1.4 after four correction rounds (damage-pulse exclusion, sub-item context credit,
-      Velocity Check LOW/duplicate exceptions, bulk-cleanup exemption, and the v1.4 Updates pass-through graces —
-      brand-new pulses and self-documenting title+DoD pulses flagged instead of penalized). 24 scorecard reads logged since
+      Rubric is stable at v1.3 after three correction rounds (damage-pulse exclusion, sub-item context credit,
+      Velocity Check LOW/duplicate exceptions, bulk-cleanup exemption). 24 scorecard reads logged since
       tracking began; the two most recent full-region reads (7/13, 7/14) show every branch at B or better,
       with Leander hitting a perfect 60/60. Training board is built and stocked with 16 seeded errors plus
       3 decoy patterns and real status-driven automations mirroring Sky Board. Rippling delivery module and
@@ -172,7 +171,7 @@
     </p>
     <div class="stat-row">
       <div><div class="stat-val">5</div><div class="stat-label">branches tracked</div></div>
-      <div><div class="stat-val">v1.4</div><div class="stat-label">current rubric</div></div>
+      <div><div class="stat-val">v1.3</div><div class="stat-label">current rubric</div></div>
       <div><div class="stat-val">24</div><div class="stat-label">scorecard reads logged</div></div>
       <div><div class="stat-val">60/60</div><div class="stat-label">best score to date (Leander, 7/13)</div></div>
     </div>
@@ -332,7 +331,7 @@
     <div class="card">
       <div class="card-icon">🗂️</div>
       <h3>Rubric Version History</h3>
-      <p>v1.0 → v1.2 → v1.3 → v1.4 — every correction and why it changed, so old scores stay interpretable.</p>
+      <p>v1.0 → v1.2 → v1.3 — every correction and why it changed, so old scores stay interpretable.</p>
       <div class="card-links">
         <span class="muted">In: tools/scrum-scores.json → meta.rubric_notes</span>
       </div>
@@ -350,14 +349,20 @@
   <div class="changelog">
 
     <div class="log-entry">
-      <div class="log-date">8/4/2026</div>
+      <div class="log-date">8/12/2026</div>
       <div class="log-body">
-        Rubric bumped to v1.4 — added two Updates-with-Context (BH-8 / IND-5) pass-through graces: (1) a pulse
-        created today and under one hour old with no update yet, and (2) a pulse whose title and Definition of
-        Done already describe the action. Both pass with no points deducted but are surfaced in a new
-        "Flagged for attention (no penalty)" section of the report, so the team gets the look without the ding.
-        Applied to the scoring skill and the Manager Reference Sheet.
-        <span class="next">Next: run a live branch read to confirm the grace logic and flag output fire cleanly.</span>
+        Built the full manager rollout process. Training module Stage 1 rewritten (daily-practice
+        rationale, group definitions, LOW/Happiness detail, Velocity Check example) and linked to a live
+        Stage 1 Checkpoint Quiz (Google Form) with questions matched to the form — no answers included.
+        Added a Mock Board Test-Out process: trainees duplicate the practice board into a dedicated
+        subfolder (never edit the master, never add a "view" — views share live data and would let
+        trainees collide on the same pulses), rework their own copy, alert the RM, and get graded —
+        pass is 85+ with real improvement over the fixed baseline. Fixed the mock board's Quarterly Goals
+        group to match the real-board convention (blank reference copies, separate "(Live)" duplicates
+        pulled into Today/This Week) — recomputed the baseline from 33 to 29/60 since all three Live
+        pulses are now missing QG Value, which also pulls down the QG-visibility criterion. Drafted the
+        manager-facing DB pulse announcing the rollout (pending final sign-off before posting).
+        <span class="next">Next: confirm DB pulse sign-off and post to the Delegation Board; share the updated system with Cameron for review.</span>
       </div>
     </div>
 
@@ -366,7 +371,6 @@
       <div class="log-body">
         Renamed the project from "Scrum Scorecard System" to "SCRUM Certification System" to reflect the
         certification/recertification track now built into it.
-        <span class="next">Next: share the updated system with Cameron for review.</span>
       </div>
     </div>
 
