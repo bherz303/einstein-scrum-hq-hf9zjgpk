@@ -165,9 +165,11 @@
       Rubric is stable at v1.3 after three correction rounds (damage-pulse exclusion, sub-item context credit,
       Velocity Check LOW/duplicate exceptions, bulk-cleanup exemption). 24 scorecard reads logged since
       tracking began; the two most recent full-region reads (7/13, 7/14) show every branch at B or better,
-      with Leander hitting a perfect 60/60. Training board is built and stocked with 16 seeded errors plus
-      3 decoy patterns and real status-driven automations mirroring Sky Board. Rippling delivery module and
-      the BM live-walkthrough checklist are still open.
+      with Leander hitting a perfect 60/60. Training board expanded 8/12 with two Sky-Board-parity columns
+      (Owner, Sprint Deliverable - Definition of Done) — closing a gap, since all five real branch boards
+      already carried both — then trimmed same-day from 41 pulses down to a leaner 32 after it ran overloaded, keeping one live
+      example of every planted-error type. Rippling delivery module and the BM live-walkthrough checklist
+      are still open.
     </p>
     <div class="stat-row">
       <div><div class="stat-val">5</div><div class="stat-label">branches tracked</div></div>
@@ -244,6 +246,8 @@
           <div class="item done">Mock Practice Board built on Monday (18421168407) with 16 seeded errors + 3 decoy patterns</div>
           <div class="item done">Board automations mirror Sky Board functionality (status→group moves, Today auto-date-stamp) — structure only, no content copied</div>
           <div class="item done">Clean example pulses added to every group (was: Hold for Sync Up empty) so trainees see right vs. wrong side by side</div>
+          <div class="item done">Owner + Sprint Deliverable - Definition of Done columns added for Sky Board parity — all five real branch boards already had both, so this closed a gap rather than creating one. Rubric stays 12 criteria / 60 pts, same as live boards <span class="added">(added 8/12, corrected 8/21)</span></div>
+          <div class="item done">Board trimmed from 41 → 32 pulses after running overloaded — cut pure filler and redundant decoys, kept one live example per planted-error type, renamed to "TRAINING — Mock Branch Board" <span class="added">(added 8/12)</span></div>
           <div class="item">Rippling delivery module — not yet built (framework calls for Rippling as the assignment/tracking platform)</div>
           <div class="item">BM live walkthrough checklist — 30-min first-week 1:1 structure, not yet built</div>
         </div>
@@ -311,7 +315,7 @@
     <div class="card">
       <div class="card-icon">🖥️</div>
       <h3>Mock Practice Board</h3>
-      <p>Live Monday board seeded with 16 errors + 3 decoy patterns, wired with Sky-Board-style automations, used for hands-on certification.</p>
+      <p>Live Monday board (32 pulses) seeded with planted errors + decoy patterns, graded on the same 12-criterion/60-point rubric as a real branch board — Owner and Sprint Deliverable columns match the live boards, wired with Sky-Board-style automations, used for hands-on certification.</p>
       <div class="card-links">
         <a target="_blank" rel="noopener noreferrer" href="https://einsteinmoving.monday.com/boards/18421168407">Open board →</a>
         <span class="muted">Outline + answer key: tools/scrum-training/mock-board-outline.md</span>
@@ -325,6 +329,15 @@
       <div class="card-links">
         <a target="_blank" rel="noopener noreferrer" href="https://bherz303.github.io/emco-scrum-mgr-npnv1jka/glossary.html">Open glossary →</a>
         <span class="muted">Repo: tools/scrum-training/glossary.md</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">✅</div>
+      <h3>Board Fix-It Checklist</h3>
+      <p>Manager-facing template — every rubric criterion as a plain checkbox, including no past-due items, so managers know exactly what to work through after a score.</p>
+      <div class="card-links">
+        <span class="muted">Repo: tools/scrum-training/board-fixit-checklist.md</span>
       </div>
     </div>
 
@@ -347,6 +360,83 @@
   </div>
 
   <div class="changelog">
+
+    <div class="log-entry">
+      <div class="log-date">8/21/2026</div>
+      <div class="log-body">
+        Corrected the training rubric across this HQ. The "14 criteria / 70 points" figure introduced on
+        8/12 was never real — it described a rubric that was never built and grades nothing. Verified
+        against three sources: the scrum-check skill scores 12 criteria for 60 points (10 standard + 2
+        bonus), the Board Fix-It Checklist has exactly 12 items, and the training module already told
+        trainees "a perfect board scores 60" and "self-score all 12 criteria." Definition of Done was
+        never mock-only — it is the first bonus criterion on real boards. Owner feeds the per-person
+        breakdown but is not scored as its own criterion.
+        <br><br>
+        Also confirmed the columns were never a divergence: all five CTXH branch boards (North Austin,
+        South Austin, Leander, San Antonio, Houston) already carry both Owner and Sprint Deliverable -
+        Definition of Done. Adding them to the mock board on 8/12 closed a parity gap rather than opening
+        one — which is what mock-board-outline.md intended all along ("clone the column structure from a
+        real CTXH branch board so columns match").
+        <br><br>
+        Net effect: the mock board and a real branch board are graded on the identical 12-criterion /
+        60-point rubric. Baseline corrected from 29/70 (41%) back to 29 out of 60 (48%, F), matching
+        mock-board-outline.md, which had it right. No logged score changes — every score on record was
+        already graded against 12/60, including Houston's 54.
+      </div>
+    </div>
+    <div class="log-entry">
+      <div class="log-date">8/14/2026</div>
+      <div class="log-body">
+        Added a Certifications section to the Performance Dashboard so Brian has one place to log and
+        see every manager's recert result — name, position/branch, test date, score, grade, a Certified/
+        Not Certified stamp, and the next recertification date (auto-flagged when it's overdue or due
+        within 2 weeks). Recert cadence is 6 months from a passing test date. Added the `certifications`
+        array + schema note to scrum-scores.json (mirrored into the dashboard's embedded data block) —
+        starts empty, ready to fill in once the region finishes this round of testing on the 15 duplicated
+        manager boards. Verified the render logic (grade colors, pass/fail stamps, overdue/soon date math)
+        with injected test data in-browser; the actual data file stays empty until real results land.
+        <span class="next">Next: log each manager's result here as they complete their mock-board recert.</span>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">8/13/2026</div>
+      <div class="log-body">
+        Ran the trimmed mock board through 2 more live grading passes as Brian worked his own practice
+        copy — 51/60 (B) → 56/60 (A), clearing all 5 past-due this-week pulses in the second pass. Confirmed
+        the No Past-Due Items bonus criterion is already in both the scrum-check skill and the public
+        Manager Reference Sheet — nothing missing there. Built a new manager-facing deliverable instead: a
+        Board Fix-It Checklist — every one of the 12 rubric criteria (10 standard + 2 bonus, explicitly
+        including no past-due items) as a plain checkbox any manager can work through after getting scored,
+        with usage instructions at the bottom.
+        <span class="next">Next: decide whether to publish the checklist to GitHub Pages alongside the reference sheet, or keep it repo-only for now.</span>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">8/12/2026 (later)</div>
+      <div class="log-body">
+        Reworked the mock training board for Sky-Board parity and ran it through several live grading
+        passes. Added two columns to match Sky Board — Owner (people) and Sprint Deliverable - Definition
+        of Done (text) — with planted gaps on both. Baseline recomputed to 29 out of 60 (48%, F). Along the
+        way corrected two scoring
+        errors from earlier same-day runs: the QG Value criterion was misread against the wrong numeric
+        column and was actually filled on all 3 Live pulses, not blank; and a later-group weekday check had
+        an off-by-one date-math error (8/24 and 8/31/2026 are Mondays, not Tuesdays as first reported).
+        Brian then worked his own practice copy through 3 graded passes live (39/60 → 52/60 → 56/60 → A),
+        fixing QG Values, adding real updates, clearing duplicates and past-due dates as he went. Board then
+        trimmed from 41 → 32 pulses on the master template (18421168407) after running overloaded — cut pure
+        filler and redundant decoys (extra sales-block/Inbox-freshness decoys, unused Hold-for-Sync-Up filler,
+        a redundant fleet-date pulse, one Done-group filler) while keeping at least one live example of every
+        planted-error type; restored a single "Order warehouse supplies" duplicate pair so the No Duplicates
+        criterion kept its example (the DB Pulse duplicate-decoy pair was not restored). Brian renamed the
+        board to "TRAINING — Mock Branch Board" for less clutter. Practice-copy scores intentionally excluded
+        from the live scrum-scores.json dashboard — they're not one of the 5 real CTXH branches.
+        Brian deleted both stale board copies (his practice copy and the earlier test duplicate) rather than
+        regenerating them from the trimmed master.
+        <span class="next">Next: confirm the DB Pulse duplicate-decoy gap is acceptable or wants a replacement example.</span>
+      </div>
+    </div>
 
     <div class="log-entry">
       <div class="log-date">8/12/2026</div>
@@ -498,7 +588,7 @@
 
 
   <footer>
-    SCRUM Certification System · Project HQ · maintained by Vera (Brian's AI Chief of Staff) · last updated 7/16/2026 ·
+    SCRUM Certification System · Project HQ · maintained by Vera (Brian's AI Chief of Staff) · last updated 8/12/2026 ·
     internal use — do not share outside Einstein without Brian's OK
   </footer>
 
