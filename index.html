@@ -153,6 +153,7 @@
     <a class="primary" target="_blank" rel="noopener noreferrer" href="https://bherz303.github.io/emco-scrum-mgr-npnv1jka/">Manager Reference Sheet →</a>
     <a target="_blank" rel="noopener noreferrer" href="https://bherz303.github.io/emco-scrum-mgr-npnv1jka/training.html">Training Module</a>
     <a target="_blank" rel="noopener noreferrer" href="https://bherz303.github.io/emco-scrum-mgr-npnv1jka/glossary.html">Board Glossary</a>
+    <a target="_blank" rel="noopener noreferrer" href="https://bherz303.github.io/emco-scrum-mgr-npnv1jka/dashboard.html">Performance Dashboard</a>
     <a target="_blank" rel="noopener noreferrer" href="https://einsteinmoving.monday.com/boards/18421168407">Mock Training Board</a>
   </div>
 
@@ -276,10 +277,12 @@
       <div class="card-icon">📊</div>
       <h3>Performance Dashboard</h3>
       <p>Live scorecard history across all 5 branches — trend chart, running averages, click-through detail, date
-         filters, plus the Certifications log. <strong>Internal only</strong> — it names individual managers with
-         their scores, so it is not published. Run it locally from the repo.</p>
+         filters, plus the Certifications log of every manager's recert result. <strong>Names individual managers
+         with their scores</strong> — obscure URL and noindexed, but anyone with the link can read it, so share it
+         deliberately.</p>
       <div class="card-links">
-        <span class="muted">Local only: tools/scrum-dashboard.html · data: tools/scrum-scores.json</span>
+        <a target="_blank" rel="noopener noreferrer" href="https://bherz303.github.io/emco-scrum-mgr-npnv1jka/dashboard.html">Open dashboard →</a>
+        <span class="muted">Source: tools/scrum-dashboard.html · data: tools/scrum-scores.json</span>
       </div>
     </div>
 
@@ -360,6 +363,28 @@
   </div>
 
   <div class="changelog">
+
+    <div class="log-entry">
+      <div class="log-date">8/25/2026</div>
+      <div class="log-body">
+        <strong>First certification logged.</strong> Calvin Hughes ran his mock board and scored 52 out of 60
+        (87%, a B) — clearing the 51-point bar by one point, up from the planted baseline of 29. Certified,
+        recert due 2/25/2027. Remaining misses: a non-Fibonacci daily LOW of 6, the duplicate
+        "Order warehouse supplies" closed as Done rather than archived, the Marcus Webb onboarding pulse
+        carrying neither an update nor a Definition of Done, and four Done items without completion notes.
+        Scored under rubric v1.4 — its pass-through grace conditions covered five self-documenting pulses,
+        which are flagged on the scorecard but cost nothing.
+        Opened a <strong>pattern watch</strong> in scrum-scores.json: Brian's ruling is that identifying a
+        duplicate but closing it instead of archiving it scores 3 of 5, not 5 — but if a majority of managers
+        make the same mistake, that's an instruction gap and everyone gets regraded. Each run now tags its
+        entry and appends the manager to the watch's observed or clean list.
+        Also, per Brian's call, <strong>re-published the Performance Dashboard</strong> so it's reachable from
+        this HQ alongside the glossary and training module, and added it to the header links. This reverses the
+        8/24 decision below: the dashboard names individual managers with their scores, and while the URL is
+        obscure and noindexed, anyone holding the link can read it.
+        <span class="next">Next: 14 managers left to certify before the Thursday 8/27 deadline.</span>
+      </div>
+    </div>
 
     <div class="log-entry">
       <div class="log-date">8/24/2026</div>
