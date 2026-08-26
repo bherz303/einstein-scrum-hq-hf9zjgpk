@@ -160,21 +160,23 @@
 
   <div class="feature">
     <div class="ft-eyebrow">Where it stands today</div>
-    <h2>Live and scoring — region average climbing week over week under the current rubric.</h2>
+    <h2>Rubric v1.5 shipped — one bar, twelve equal criteria, and a weekly ladder.</h2>
     <p>
-      Rubric is stable at v1.3 after three correction rounds (damage-pulse exclusion, sub-item context credit,
-      Velocity Check LOW/duplicate exceptions, bulk-cleanup exemption). 24 scorecard reads logged since
-      tracking began; the two most recent full-region reads (7/13, 7/14) show every branch at B or better,
-      with Leander hitting a perfect 60/60. Training board expanded 8/12 with two Sky-Board-parity columns
-      (Owner, Sprint Deliverable - Definition of Done) — closing a gap, since all five real branch boards
-      already carried both — then trimmed same-day from 41 pulses down to a leaner 32 after it ran overloaded, keeping one live
-      example of every planted-error type. Rippling delivery module and the BM live-walkthrough checklist
-      are still open.
+      <strong>Rubric v1.5 landed 8/26/2026</strong> — the largest structural change since the system was built,
+      triggered by a seven-point discrepancy review from Mike's region. Twelve criteria at 5 points each,
+      <strong>60 total, and nothing scores 0</strong>; the old "bonus" pair is gone, replaced by two equally-weighted
+      sections — <strong>Fundamentals</strong> (10) and <strong>Conscientious Details</strong> (2). The certification
+      line is stated once and stated everywhere: <strong>85%, or 51 of 60</strong>. Individuals are now scored on all
+      twelve criteria out of 60 rather than six out of 30, closing a loophole where a manager could post a clean
+      30/30 while dragging the branch on the three criteria that weren't on their sheet. Maintenance moves to a
+      <strong>weekly live-board read</strong> with a rolling-window ladder. 31 reads and 2 certifications are logged;
+      all of them predate v1.5 and are marked <strong>testing</strong> — kept for history, excluded from ladder math.
+      Rippling delivery module and the BM live-walkthrough checklist are still open.
     </p>
     <div class="stat-row">
       <div><div class="stat-val">5</div><div class="stat-label">branches tracked</div></div>
-      <div><div class="stat-val">v1.3</div><div class="stat-label">current rubric</div></div>
-      <div><div class="stat-val">24</div><div class="stat-label">scorecard reads logged</div></div>
+      <div><div class="stat-val">v1.5</div><div class="stat-label">current rubric</div></div>
+      <div><div class="stat-val">2</div><div class="stat-label">certified under v1.5</div></div>
       <div><div class="stat-val">60/60</div><div class="stat-label">best score to date (Leander, 7/13)</div></div>
     </div>
   </div>
@@ -347,7 +349,7 @@
     <div class="card">
       <div class="card-icon">🗂️</div>
       <h3>Rubric Version History</h3>
-      <p>v1.0 → v1.2 → v1.3 — every correction and why it changed, so old scores stay interpretable.</p>
+      <p>v1.0 → v1.2 → v1.3 → v1.4 → v1.5 — every correction and why it changed, so old scores stay interpretable.</p>
       <div class="card-links">
         <span class="muted">In: tools/scrum-scores.json → meta.rubric_notes</span>
       </div>
@@ -363,6 +365,118 @@
   </div>
 
   <div class="changelog">
+
+    <div class="log-entry">
+      <div class="log-date">8/26/2026 <span style="font-weight:400">· later same day</span></div>
+      <div class="log-body">
+        <strong>First two certifications re-scored under v1.5 — and a v1.5 bug caught in the process.</strong>
+        Brian's call was to re-run Calvin and Joel before grading the remaining 12, so the whole cohort sits on
+        one rubric. Doing it surfaced a defect in the rubric that had shipped hours earlier.
+        <br><br>
+        <strong>The bug.</strong> v1.5 changed Definition of Done to a movement-derived population — grade only
+        what moved into Done since the previous read — to stop bulk cleanup sweeps being graded on a live board.
+        But the mock training board's planted C10 error is <em>"3 of the 4 Done items have no completion note,"</em>
+        and those items are dated <strong>July by design</strong>. A movement window excludes them, so a trainee
+        could execute the taught fix perfectly and still score 1. The planted error became unfixable, and the
+        practical ceiling on a mock board dropped to 55.
+        <br><br>
+        <strong>The fix (Brian's option B).</strong> A mock certification read grades <strong>the Done group as
+        planted</strong> — all items, any date, damage claims still excluded. The movement window applies only to
+        live weekly reads, which is what it was built for. Max stays 60, nothing is exempted, and all twelve
+        criteria stay testable. Two alternatives were rejected: exempting C10 on mock reads (loses a criterion and
+        leaves the planted error untestable) and re-dating the planted Done items across all 15 mock boards (15
+        board edits, and it would need redoing every cohort).
+        <br><br>
+        <strong>Calvin Hughes — 52 of 60, 87%, B, certified.</strong> Unchanged total from v1.4, different
+        composition. Open misses: non-Fibonacci daily LOW of 6 on "Truck check + dispatch"; the duplicate
+        "Order warehouse supplies" closed as Done rather than archived (3 of 5 per the pattern watch); the
+        Marcus Webb onboarding pulse carrying neither an update nor a Definition of Done; office printer and July
+        truck inventory still bare in Done.
+        <br><br>
+        <strong>Joel Villatoro — 52 of 60, 87%, B, certified.</strong> Down from 54, and the drop is entirely
+        Updates with Context going 5 to 3: v1.5 retires the v1.4 grace that passed title-plus-Definition-of-Done
+        pulses at full marks, and nine of his critical pulses lean on that rather than a current update. Two do
+        carry real ones — the Amara Chen mirror valued at $200 with a refund plan, and the Marcus Webb I-9 note.
+        Still open: "Follow up" left vague with DoD "Need more context" (though he posted an update asking regional
+        for context rather than guessing — right instinct); all three live QG Values still placeholder 1s against
+        Weekly LOWs of 12, 8 and 10. Clean on duplicates — he archived the planted one instead of closing it.
+        <br><br>
+        <strong>One scoring decision worth recording.</strong> Both boards were graded <strong>as of their 8/25
+        work date, not 8/26</strong>. Every Today item on both boards is dated 8/25, so grading a day later would
+        have made all of them past-due and dropped No Past-Due from 5 to 1 on both — purely because the calendar
+        moved. That is not a board finding. A real weekly read doesn't have this problem.
+        <br><br>
+        <strong>Also landed:</strong> Brian's call that nothing before 8/24 is a reference point any more. The 31
+        reads dated 6/15–7/27 moved out of the active data into <code>archived_evals</code> — retained, not
+        rendered, not used for ladder math. They were graded under v1.0–v1.4 against a different criteria set and
+        aren't comparable. That also retires the two logged arithmetic errors found during the migration (7/14
+        North Austin 55-vs-52, 7/14 South Austin 50-vs-52) without needing a ruling on either.
+        <br><br>
+        Reference sheet, dashboard, training module and glossary all republished live. <strong>Next: the remaining
+        12 boards, due Thursday 8/27</strong> — now on one rubric with all twelve criteria testable.
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">8/26/2026</div>
+      <div class="log-body">
+        <strong>Rubric v1.5 — reconciled against Mike's discrepancy review.</strong> Mike's region sent seven
+        findings on how the board is graded. Five were confirmed against the live files, one turned out to be on
+        DFWT's side, and one was half-right. Three more surfaced during the audit that nobody had flagged.
+        <br><br>
+        <strong>Confirmed and fixed:</strong> (1) "Bonus" was misleading — the two bonus criteria were a sixth of the
+        score <em>and</em> the harshest, scoring 0 on a red where regular criteria floored at 1, so the two items a
+        skimmer reads as optional cost the most to miss. The asymmetry is gone; all twelve criteria now floor at 1,
+        and the sections are renamed <strong>Fundamentals</strong> and <strong>Conscientious Details</strong>.
+        (2) Updates with Context graded a different list in its green row than its yellow row — sales appeared in one
+        and not the other, so two graders could score the same board differently. One list now, used in every row.
+        (3) No N/A rules existed for empty scope; resolved by ruling that the max is <em>always</em> 60 — empty scope
+        is a confirmed pass on the negative criteria and a <strong>miss</strong> on the positive ones. (4) B was
+        labeled "Strong" while two consecutive B's pulled certification; the bar and the trigger are now the same
+        number. (5) Definition of Done asked for a column and a posted update interchangeably; it now accepts both
+        with a hierarchy — a real update is 5, a DoD that genuinely covers the title is 3, neither is 1.
+        <br><br>
+        <strong>Sent back:</strong> the daily-LOW target. All six of Brian's files say 15–20, matching Mike's sheet —
+        the 15–25 figure lives on DFWT's side. And the Happiness cadence was already in the training module the
+        whole time; v1.5 moves it into the graded criterion where it belongs.
+        <br><br>
+        <strong>Found during the audit, not in the review:</strong> (1) Criterion 4 measured different things in the
+        grader than in the published sheet — the grader checked QG Value usage, the sheet checked QG pulse
+        visibility. Split: criterion 4 is Happiness only, QG visibility folded into criterion 5. (2) Full Eval
+        advertises 100 points but lists seven Meeting Management items, which totals 95. No Full Eval has ever been
+        run, so nothing behind us is wrong — <strong>still open, awaiting Brian's call</strong> on whether an eighth
+        item was dropped or the max should read 95. (3) The pass bar appeared only in the rollout announcement and
+        was absent from the reference sheet managers self-check against. Now printed on the sheet.
+        <br><br>
+        <strong>Brian's rulings.</strong> Certification line <strong>85% (51/60)</strong> — Calvin's 87% stands.
+        Recovery is 85%+ on two consecutive live reads. <strong>One miss is not a pattern</strong> — it logs a
+        redirect for the team, nothing more; recertification triggers on three misses inside any rolling four reads,
+        or two consecutive reads at 44 or below. Definition of Done moved into Fundamentals, Project Column into
+        Conscientious Details. Individuals scored on all twelve criteria out of 60, because an individual's pulses
+        <em>are</em> the board. <strong>BMs clear two bars</strong> — their own score and their board's.
+        Mock certifies, live maintains, weekly. Empty Later group and no QG pulses owned are both misses.
+        <br><br>
+        <strong>Measurement work behind the changes.</strong> Confirmed the scored surface is fully readable
+        (50–161 active items per board) and killed the sampling licence that let a 5-point criterion rest on a ~7%
+        read of South Austin's 140 active pulses. Found that windowing Definition of Done on <code>updated_at</code>
+        would have been wrong: South Austin had 34 Done items sharing a timestamp to the second and 40 more in a
+        single burst the day before — cleanup sweeps, not completions. The population is now derived from what
+        actually moved into Done since the previous read.
+        <br><br>
+        <strong>Data migration.</strong> Criterion keys migrated from BH-*/BONUS-* to C1–C12 with the old mapping
+        preserved in <code>meta.criteria_map</code> — keys that contradicted their section were exactly the drift
+        that started this review. All 31 evals and both certifications tagged <code>phase: "testing"</code>; nothing
+        deleted. The uniform 1-point floor moved two logged scores (South Austin 7/21 → 44, Leander 7/21 → 56); no
+        grade changed. <strong>Two pre-existing arithmetic errors surfaced and were deliberately left alone</strong> —
+        the 7/14 North Austin and South Austin reads have stored scores that don't equal the sum of their own
+        criteria (55 vs 52, and 50 vs 52). Both are flagged in the data with a <code>data_note</code> rather than
+        silently corrected; they are testing-phase entries, so nothing live depends on them, but Brian should pick
+        the right number.
+        <br><br>
+        <strong>Next:</strong> re-score Calvin and Joel against v1.5 before grading the remaining 12 boards, so the
+        whole cohort sits on one rubric.
+      </div>
+    </div>
 
     <div class="log-entry">
       <div class="log-date">8/25/2026</div>
