@@ -160,13 +160,14 @@
 
   <div class="feature">
     <div class="ft-eyebrow">Where it stands today</div>
-    <h2>Rubric v1.5 shipped — one bar, twelve equal criteria, and a weekly ladder.</h2>
+    <h2>Rubric v1.6.2 is live — nine criteria, 45 points, one grader, and no ladder during calibration.</h2>
+    <p><strong>Current as of 10/14/2026.</strong> The paragraph below is the v1.5 history. For today's rules see the 10/5 changelog entry; for who is certified see the <a target="_blank" rel="noopener noreferrer" href="https://bherz303.github.io/einstein-scrum-hq-hf9zjgpk/certifications.html">Certifications page</a> (26 managers, Jake Petersen most recent).</p>
     <p>
       <strong>Rubric v1.5 landed 8/26/2026</strong> — the largest structural change since the system was built,
       triggered by a seven-point discrepancy review from Mike's region. Twelve criteria at 5 points each,
       <strong>60 total, and nothing scores 0</strong>; the old "bonus" pair is gone, replaced by two equally-weighted
       sections — <strong>Fundamentals</strong> (10) and <strong>Conscientious Details</strong> (2). The certification
-      line is stated once and stated everywhere: <strong>85%, or 51 of 60</strong>. Individuals are now scored on all
+      line was stated once and stated everywhere: <strong>85%, or 51 of 60</strong> (superseded 9/8/2026 for live reads &mdash; now 80%, 48 of 60; mock certification stays at 85%). Individuals are now scored on all
       twelve criteria out of 60 rather than six out of 30, closing a loophole where a manager could post a clean
       30/30 while dragging the branch on the three criteria that weren't on their sheet. Maintenance moves to a
       <strong>weekly live-board read</strong> with a rolling-window ladder. 31 reads and 2 certifications are logged;
@@ -276,6 +277,13 @@
   <div class="card-grid">
 
     <div class="card">
+      <div class="card-icon">🏅</div>
+      <h3>Certifications</h3>
+      <p>Every certified manager in one table &mdash; position, branch, test date, score, attempts and recert date. 26 certified, most recent Jake Petersen 41/45 (10/7). <strong>Names managers and scores</strong> &mdash; obscure URL, noindexed.</p>
+      <a target="_blank" rel="noopener noreferrer" href="https://bherz303.github.io/einstein-scrum-hq-hf9zjgpk/certifications.html">Open Certifications</a>
+    </div>
+
+    <div class="card">
       <div class="card-icon">📊</div>
       <h3>Performance Dashboard</h3>
       <p>Live scorecard history across all 5 branches — trend chart, running averages, click-through detail, date
@@ -314,6 +322,15 @@
       <div class="card-links">
         <a target="_blank" rel="noopener noreferrer" href="https://bherz303.github.io/emco-scrum-mgr-npnv1jka/training.html">Open training module →</a>
         <span class="muted">Repo: tools/scrum-training/training-module.md</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🖱️</div>
+      <h3>Stage 0 — Monday.com Basics</h3>
+      <p>Pre-req for managers with zero Monday.com experience — logging in, finding your board, clicking a status, posting an update. Skip if you've used Monday before.</p>
+      <div class="card-links">
+        <span class="muted">Repo: tools/scrum-training/stage-0-monday-basics.md · NOT yet published to the public site</span>
       </div>
     </div>
 
@@ -365,6 +382,381 @@
   </div>
 
   <div class="changelog">
+
+    <div class="log-entry">
+      <div class="log-date">10/14/2026 &middot; Certifications page, Jake Petersen certified</div>
+      <div class="log-body">
+        <strong>New standalone Certifications page</strong> &mdash; one table of every certified manager (26), newest first,
+        replacing the log buried in the dashboard as the thing to share. Pulled from <code>scrum-scores.json</code>.
+        <br><br>
+        <strong>Jake Petersen (South Austin FM) certified 10/7: 41/45, 91%, first attempt</strong>, on his own mock board run without Brian &mdash;
+        clears the 38/45 line. Recert due 4/7/2027. His one real miss was Updates with Context (no updates posted; he filled Definition of Done text instead).
+        <br><br>
+        <strong>Branch/position gaps filled:</strong> Zach Krodel (Ops, McKinney), Shane Heaberlin (Ops, Tampa), Erik Orama (Ops, Fort Worth), Calvin Hughes (Flex, North Austin).
+        Dashboard data re-synced. Certifications earned on the 60-point rubric stand as-is.
+        <br><br>
+        <strong>Still open:</strong> the calibration package (Updates-with-Context by share, a yellow band at 70&ndash;79%, count a lapsed Later pulse once, exempt the Templates group) is awaiting Brian and Mike; nothing has changed in the rubric for it.
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">10/5/2026 &middot; rubric v1.6.2, aligned to the network grader</div>
+      <div class="log-body">
+        <strong>Manager-facing docs brought into line with Cameron's live Meeting OS grader.</strong>
+        The 10/1 docs were written from an earlier draft; Brian approved Cameron's version, so the
+        network rubric (v1.6.1) is the source of truth and the Reference Sheet, Training Module,
+        Glossary, Fix-It Checklist and mock-board outline now match it.
+        <br><br>
+        <strong>1. Bands.</strong> Super Green 41&ndash;45 (90%+) &middot; Green 36&ndash;40 (80&ndash;89%) &middot;
+        Red 35 or less (under 80%). Every full read is odd, so Green is 37 or 39 and Super Green is 41, 43 or 45.
+        The certification line stays 38 of 45 (about 85%), kept separately; a full read can't equal 38, so the
+        first passing full read is 39, and a 37 is Green but under the line. The old qualifying / redirect /
+        critical bands are gone.
+        <br><br>
+        <strong>2. Calibration, no ladder.</strong> Cameron ruled 10/1: for the first 2&ndash;3 weeks of calibrated
+        scores nothing fires from a live read &mdash; no ladder step, warning, redirect or re-certification. Scores,
+        bands and the certification line are information only. The recert trigger written 10/1 (two reads in a row at
+        33 or below) was wrong for now and is removed. The 6-month mock re-test is unchanged.
+        <br><br>
+        <strong>3. No letter grades.</strong> The A&ndash;F scale is out of manager-facing text; the band is said instead.
+        Historical certification records keep their letters. The mock baseline reads 19/45, Red, 42%.
+        <br><br>
+        <strong>4. Closing notes.</strong> Updates with Context now says a critical pulse that moved into Done this week
+        should carry a short closing note; it counts as its current update. No new points.
+        <br><br>
+        <strong>5. Rock share.</strong> New coaching-only number: QG Weekly LOW &divide; all Weekly LOW across Today +
+        This Week, target 50%+. Never scored. Also confirmed: this week's board only, no bonus points, and the
+        Out-of-Office section matches the network rubric.
+        <br><br>
+        <em>Open:</em> the Stage 3 / Certification text in the training module still describes a live-board
+        certification path from before this change; left for Brian to rule.
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">10/1/2026 · rubric v1.6.1, OOO board-score exclusion</div>
+      <div class="log-body">
+        <strong>OOO exemption now covers the board score, not just the individual.</strong> Triggered by
+        the San Antonio live read same day: board went from 33/45 (critical) to 39/45 (qualifying) once
+        Lukas Konrad's pulses were pulled from the population &mdash; he was genuinely out all week and
+        his stale/past-due pulses alone were costing the board two full criteria. Nobody can work a
+        board they're not at, so as of today a confirmed-OOO manager's pulses are filtered entirely out
+        of all 9 criteria for that read &mdash; not scored as a miss or a pass, just excluded.
+        <br><br>
+        <strong>Detection rule revised the same afternoon (Cameron/Brian call).</strong> The first pass
+        at this relied on finding an actual "OOO" / "Out of Office" template pulse on the board &mdash;
+        but Lukas was genuinely out and that pulse had never been created, so the mechanical trigger
+        never fired. Relying on a pulse that can simply not get made isn't a reliable trigger on its
+        own. Revised to three paths, in priority order: (1) Brian tells the grader directly when
+        requesting the read, (2) the OOO template pulse, if present, still counts on its own, (3)
+        <strong>new</strong> &mdash; the grader proactively asks Brian to confirm when one person's
+        pulses look like they're clearly dragging the score down in a way that reads like an absence,
+        not ordinary neglect. Never guesses either way.
+        <br><br>
+        Scoped to <strong>full-week absences only</strong> &mdash; a planned single/half day means the
+        manager should have pre-triaged their own week, an unplanned call-out means the BM triages that
+        manager's pulses at huddle that day. Neither needs the template pulse, and posting one for a
+        single day would confuse the detection. If someone's out the full week and nobody posts the
+        template, that's a coaching flag on its own, separate from the board score.
+        <br><br>
+        Propagated into the Board Fix-It Checklist, Training Module, Glossary (both .md and .html
+        mirrors) and the Scorecard Reference Sheet. Source of truth stays
+        <code>.claude/skills/scrum-check/SKILL.md</code>.
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">10/1/2026 · rubric v1.6.1, same day</div>
+      <div class="log-body">
+        Cameron sent back his COS's recap of the same call to cross-check against this build. Mostly
+        matched 1:1 (QG Value/DoD/Project not graded, no bonus points, 45 not rescaled to a round
+        number, Brian's own grader can still track DoD/QG Value since the Meeting OS grader scores
+        neither). One open question got answered: <strong>C12 (No Past-Due Items) now also covers
+        Later/Deferred</strong>, not just Today/This Week. C3 only ever checked that a Later item had a
+        future date set at read time &mdash; it never caught that date lapsing with nobody looking again.
+        Folded into the existing criterion, no new column, no new scoring tier.
+        <br><br>
+        Also surfaced: Cameron's answer on warnings/escalation is more specific than "needs sign-off"
+        &mdash; <strong>no warning thresholds get set until the system runs uncalibrated for 2&ndash;3
+        weeks</strong>, with a grade-history heat map built in alongside it. That supersedes the vaguer
+        "needs Brian's call" framing from the first v1.6 entry below.
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">10/1/2026 · rubric v1.6</div>
+      <div class="log-body">
+        <strong>QG Value, Definition of Done, and Project Column are OUT of the scored rubric.</strong>
+        Call with Cameron and Mike ("Scrum Grading Simplification and Meeting OS Alignment") — now
+        that Meeting OS captures weekly rock status and commitment directly from every manager, these
+        three columns were a redundant backstop, and Definition of Done was genuinely broken:
+        a missing DoD was double-docking the Updates criterion on top of it. The columns stay on
+        boards for anyone who wants them — just not scored.
+        <br><br>
+        Rubric is now <strong>9 criteria &times; 5 = 45 points</strong> (was 12 &times; 5 = 60): C1, C2, C3, C4,
+        C6, C7, C8, C9, C12. Bars translated at the same percentages, Brian's call — hold the standard,
+        just on a smaller scale: live qualifying 80% &rarr; <strong>36/45</strong> (was 48/60), mock
+        certification 85% &rarr; <strong>38/45</strong> (was 51/60). Live bands: 36&ndash;45 qualifying &middot;
+        34&ndash;35 redirect &middot; 9&ndash;33 critical. Floor is 9, not 12.
+        <br><br>
+        <strong>Certifications already on file under the old 60-point rubric stand as-is</strong> — they
+        certified under a stricter standard than v1.6 requires, so there's no re-cert from this change.
+        Historical `scrum-scores.json` entries keep their logged C5/C10/C11 keys; new reads from today
+        forward use the 9-key scored set.
+        <br><br>
+        <strong>Still open, not yet ruled:</strong> Brian described a new escalation band on the call
+        (back-to-back sub-70% boards trigger a formal warning + recert) that conflicts with whatever
+        currently drives "two B's in a row &rarr; research" — he said the current trigger is wrong, but
+        the replacement rule needs his explicit sign-off before the ladder logic changes. See
+        <code>scrum-rubric-v16-simplification.md</code>.
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">9/29/2026 · shared to the network, later same day</div>
+      <div class="log-body">
+        Shared the two new reference flags (Pulse Age Since Creation, Repeated Deferral Without
+        Action) to the Shared Context Board Announcements lane, addressed to Albert and Gerald —
+        offered the exact SKILL.md wording if either wants to adapt it for their own board-hygiene
+        rubrics. First post used name-addressing only (Albert and Gerald have no Monday logins of
+        their own); a follow-up update on the same pulse tagged <strong>Cameron and Mike directly</strong> with a
+        real notification, since a ping meant for their COS agents needs to land on the principal's
+        own account to actually fire. Pulse: SCB item `13162590465`.
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">9/29/2026 · corrected + expanded, later same day</div>
+      <div class="log-body">
+        <strong>Correction to the entry below:</strong> the Pulse Age flag as first built was scoped board-wide,
+        including Later/Deferred. Brian's follow-up call fixed that — <strong>Later/Deferred is now excluded
+        entirely</strong> (with one exception: QG pulses, which shouldn't be parked there at all). Later/Deferred
+        is designed to hold things for months until they resurface; a 14-day creation-age bar there
+        would have flagged normal, intentional parking as a problem. The flag now applies only to
+        Today, This Week, and Hold for Sync Up.
+        <br><br>
+        <strong>New second flag added: Repeated Deferral Without Action.</strong> A pulse in Later/Deferred that's
+        been re-dated 3+ consecutive weekly reads in a row with zero update posted in between — the
+        actual failure mode the exemption above doesn't cover (parking is fine; getting cycled back
+        and pushed again with nobody looking at it is not). Requires cross-read history — pulls the
+        last 3 eval entries' <code>active_items</code> lists per branch and checks for silence across
+        that span via <code>get_updates</code>. Both flags stay non-scored, in the same "Flagged for
+        attention (no penalty)" section.
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">9/29/2026 · later same day</div>
+      <div class="log-body">
+        Added a new <strong>reference flag</strong> to the scrum-check rubric — Pulse Age Since Creation, Brian's
+        request. Reads the creation timestamp on every active pulse board-wide (not just Inbox) and
+        flags anything 14+ days old with no real progress — no update in 7 days, no sub-item detail,
+        not moved to Done. Closes a real gap: C6 (Inbox Age) only checks Inbox at 5 days, and C12
+        (Past-Due) only checks due date, so a pulse with no due date could sit untouched for weeks
+        and pass both. Excludes the same recurring-placeholder and damage-claim list already used for
+        C7/C10. <strong>Non-scored by Brian's explicit call</strong> — doesn't touch the 60-point total, surfaces
+        in the existing "Flagged for attention (no penalty)" section of every readout instead.
+        <span class="next">Superseded by the correction above, same day.</span>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">9/29/2026</div>
+      <div class="log-body">
+        Built Stage 0 — a Monday.com basics primer to run before Stage 1 of the training module,
+        for managers with zero prior Monday.com experience. Logging in, finding your board, what an
+        item/group/column is, clicking a Status pill and watching the automatic group-jump, and posting
+        an update — the literal software mechanics the rest of the module assumes you already know.
+        Linked from the top of the Training Module's own intro with a skip-if-you've-used-Monday note.
+        <span class="next">Next: publish to the public site alongside the rest of the training pages so it's live for the next hire without Monday experience.</span>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">9/8/2026</div>
+      <div class="log-body">
+        <strong>Rubric 1.5.2 &mdash; the qualifying grade on a live read drops to 80%. Ladder change only; no criterion moved.</strong>
+        Brian's ruling, scoped in his words to &ldquo;the daily runs of boards.&rdquo; <strong>48&ndash;60 (80%+) is
+        QUALIFYING</strong> &mdash; good, <strong>no alarms and no issue opened</strong>; he takes the feedback to the
+        team and the board gets corrected in the normal rhythm. <strong>45&ndash;47 (75&ndash;79%) logs a
+        REDIRECT</strong>, explicitly <em>not</em> major intervention. <strong>12&ndash;44 (74% and below) is
+        CRITICAL</strong> &mdash; the first one is a logged instance of critical issues or misses, and
+        <strong>two consecutive weekly reads at 74% or less requires recertification.</strong> The bands land on whole
+        points, so nothing falls between them: 44 is 73.3%, 45 is exactly 75%, 48 is 80%.
+        <br><br>
+        <strong>Mock certification is UNCHANGED at 85%, 51 of 60.</strong> Initial certification is a test; the live
+        read is maintenance. Both bars now appear side by side in every trainee-facing surface so the two can't be
+        conflated.
+        <br><br>
+        <strong>Why it landed:</strong> the 85% line was flagging boards Brian considered fine. Under it, San Antonio
+        logged <strong>two consecutive soft misses at 83%</strong> (8/31 and 9/7) and Cameron Klepac did the same
+        &mdash; both sat one read away from a recertification trigger on boards nobody was worried about. 80% puts the
+        alarm where he actually wants it.
+        <br><br>
+        <strong>Retired:</strong> the pass / soft-miss / miss band names on live reads, the
+        <strong>three-misses-in-a-rolling-four-reads</strong> trigger, and the 85% recovery bar (now 80%).
+        <strong>All four logged live reads re-banded</strong> &mdash; Leander 56 and 52, San Antonio 50 and 50, plus
+        every individual on them; the two San Antonio boards and Cameron Klepac's two 50s move from soft miss to
+        qualifying. Mock entries left on the 85% scale. Scores themselves are untouched.
+        <br><br>
+        <strong>Codified in eight surfaces</strong> &mdash; the skill (Step 5 output language + the ladder), the score
+        file's <code>grading_bands_live</code> / <code>ladder_live</code> / rubric note 1.5.2, the dashboard's embedded
+        copy, the Manager Reference Sheet, the Training Module (HTML + Markdown), both glossaries, and the Board Fix-It
+        Checklist.
+        <br><br>
+        &#9888; <strong>Two gaps the change opens, raised and NOT ruled.</strong> The retired rolling-four rule existed
+        to catch a manager alternating <strong>77 &middot; 73 &middot; 77 &middot; 73</strong>, where no two critical
+        reads are ever consecutive &mdash; under the new rule that manager never reaches recertification, and the
+        pattern appears in four of the five branch histories on record. And <strong>repeated redirects never
+        escalate</strong>: four straight reads at 45&ndash;47 carry the same consequence as one.
+        <span class="next">Next: Brian to rule on the alternating-pattern gap and on whether a standing redirect eventually escalates.</span>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">9/7/2026</div>
+      <div class="log-body">
+        <strong>Rubric 1.5.1 &mdash; recurring placeholder pulses no longer count on Updates with Context.</strong>
+        Brian's ruling. A pulse that is a <em>standing container for repeated work</em> rather than a project that
+        progresses does not need to carry an update, a bare one is <strong>not a miss</strong>, and it is never named
+        as a gap. The named example is <strong>sales blocks</strong> &mdash; Monday PM, Tuesday AM, Sunday, Thursday
+        and every variant. Also covered: Dispatch Board, Courtesy Texts, EOD/MH Notes, Admin&nbsp;/&nbsp;Inbox,
+        Submit Praise, Check for lates in Rippling, Submit receipts, Order warehouse supplies, Training Day, and
+        anything titled &ldquo;Do Not Sync&rdquo; or &ldquo;DO NOT ARCHIVE.&rdquo;
+        <br><br>
+        <strong>The test is the pulse's shape, not its category.</strong> Sales stays on the critical list: the
+        <em>Individual Sales Goal (Live)</em> QG pulse tracks a number that moves and still needs a weekly note. The
+        weekly block does not &mdash; you never finish &ldquo;Tuesday PM Sales,&rdquo; you re-date it and run it again.
+        <br><br>
+        <strong>Why it landed:</strong> the 8/31 and 9/7 Leander live reads both charged <strong>seven</strong>
+        sales-block pulses as gaps, four of them &ldquo;last touched in 2025.&rdquo; The rubric was reading a
+        placeholder as a stalled project. Asking a manager to post &ldquo;ran the block again&rdquo; fifty-two times a
+        year is busywork that teaches them the criterion is noise. The amendment makes the criterion
+        <em>sharper</em>: what is left is the pulses where silence actually means something.
+        <br><br>
+        <strong>Codified in all seven surfaces</strong> &mdash; the skill, the Manager Reference Sheet, the Training
+        Module (HTML + Markdown), the Board Fix-It Checklist, and both glossaries (new term:
+        <em>Recurring placeholder pulse</em>). No other criterion changes.
+        <br><br>
+        <strong>Two logged reads restated, both Leander live, both ladder-neutral.</strong> 9/7: Frank
+        <strong>56 &rarr; 58</strong> (his only gap was two sales blocks); board holds at <strong>52</strong> and
+        Garrison at <strong>54</strong> because the Rachel West discount pulse has neither a current update nor a
+        Definition of Done and is not a placeholder. 8/31: the entire finding was the seven blocks, so board
+        <strong>54 &rarr; 56</strong>, Frank <strong>56 &rarr; 58</strong>, Garrison <strong>54 &rarr; 56</strong>.
+        Original figures preserved under <code>amended_from</code> in the score file &mdash; 54 is still the number
+        reported on the day. Every mock read was checked and none moved.
+        <span class="next">Next: confirm the 8/31 restatement should stand, or roll it back to the reported 54.</span>
+      </div>
+    </div>
+
+
+    <div class="log-entry">
+      <div class="log-date">9/1/2026</div>
+      <div class="log-body">
+        <strong>Master mock board was gutted, and has been rebuilt.</strong> The shared
+        <em>TRAINING &mdash; Mock Branch Board</em> dropped from <strong>32 items to 3</strong> &mdash; only the
+        Quarterly Goals reference group survived. Cause: Dustin Street deleted his own assigned mock board, created a
+        personal board, and populated it by <strong>moving items off the master</strong> rather than duplicating it.
+        Original item IDs on his board confirm a move, not a copy. This is the stale
+        &ldquo;duplicate the mock board&rdquo; instruction that was removed everywhere on 8/31 &mdash; he almost
+        certainly worked from an older copy of it.
+        <br><br>
+        <strong>Restored to the certified 32-item planted state.</strong> All 29 missing items were rebuilt on the
+        original board ID, so every existing reference still resolves. Source of truth was
+        <strong>Lukas Konrad's copy</strong> &mdash; untouched since 8/24 and confirmed identical to Sergio
+        Buenrostro's copy item-for-item, which makes it two independent witnesses to the planted state. The seeded
+        completion note on &ldquo;Onboarded new hire Alex Tran&rdquo; was recreated; the seeded Hiring Targets note
+        survived on the original item. Every field was diffed against the pristine copy after the rebuild &mdash;
+        exact match across all 32 items.
+        <br><br>
+        <strong>Rebuild gotcha worth keeping.</strong> Monday's API reads <code>{"index": N}</code> in column values
+        as the label <em>id</em>, not the display index. The two diverge above id 4, so Status and Priority landed one
+        label off on 17 items on the first pass (Done &#128170; wrote as This Week, Happiness as Meeting, Low as
+        Medium). Caught on verification and corrected by writing <code>{"label": "..."}</code> instead. <strong>Always
+        write status values by label name, never by index.</strong>
+        <br><br>
+        <strong>One fidelity gap, by API limit:</strong> created dates on the rebuilt items are 9/1, not the original
+        July/August. The Inbox Age criterion measures created date, so a copy duplicated from this master and graded
+        within 5 days will read the Inbox orphans as a confirmed pass instead of the intended miss. The planted titles
+        still say &ldquo;sitting since 6/29&rdquo; and &ldquo;sitting since 7/8,&rdquo; so the exercise itself is
+        intact &mdash; only the automated read of that one criterion is affected, and it self-corrects after 5 days.
+        <span class="next">Next: Dustin's board holds only 19 of 32 items and is missing four seeded errors &mdash; he needs a fresh duplicate before attempt 2, and Brian rules whether tonight's 50 counts as attempt 1.</span>
+      </div>
+    </div>
+
+
+    <div class="log-entry">
+      <div class="log-date">8/31/2026 <span style="font-weight:400">· later same day</span></div>
+      <div class="log-body">
+        <strong>Second mock-read exception: past-due grades against the trainee's work date, not the read date.</strong>
+        A mock board is a frozen artifact. A trainee who does the work on Friday and dates every Today item to Friday
+        is correct on Friday &mdash; but read the following Monday, all of it shows past due and the score decays with
+        the calendar. Whoever gets graded last is penalized for nothing they did.
+        <br><br>
+        <strong>Caught live.</strong> Frank Williams worked his mock board 8/28 and set Today to 8/28. Read on 8/31,
+        the strict rule scored No Past-Due Items at <strong>1</strong> and dropped him from <strong>52 to 48</strong>
+        &mdash; a pass to a soft miss, entirely from three days passing. Brian's ruling: <em>"We won't penalize Frank
+        for me not running the score on the same day he did it."</em> Frank stands at <strong>52 of 60 (87%, B, PASS)</strong>.
+        <br><br>
+        <strong>This is the same defect class as the Definition of Done mock bug from 8/26</strong> &mdash; a rule
+        written for live boards giving a wrong answer on a frozen training artifact. Both now resolve identically:
+        <strong>mock reads grade against the trainee's own timeline; live reads grade against today.</strong> The read
+        basis and the work date are now stated in the output and stored on the logged read.
+        <br><br>
+        <strong>Also today:</strong> individual readouts now require a one-line note on <em>every</em> criterion that
+        scored under 5, no matter how high the total &mdash; a 56 of 60 with no notes tells that manager nothing to work
+        on. And auto-generated damage claim pulses are exempt from the duplicates criterion (ruled earlier today).
+        <span class="next">Next: Garrison Cobe's mock held mid-flight at 50 &mdash; he was still working the board at 12:37 today. Ten live branch boards still to read.</span>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">8/31/2026</div>
+      <div class="log-body">
+        <strong>Rubric ruling: auto-generated damage claim pulses are exempt from No Duplicates.</strong>
+        A pulse titled &ldquo;Determine Mover Responsible&rdquo; with a Project column of &ldquo;New Damage Claim&rdquo;
+        is created by the board system, not by a manager, and it routinely fires several identical copies of the
+        same claim. Those copies are now <strong>ignored entirely</strong> on that criterion &mdash; not flagged,
+        not scored, not charged to the individual or the BM, in any group, at any age, open or closed. Managers
+        mark them Done or archive them as they work the claims and either is correct. The &ldquo;closed instead
+        of archived scores 3&rdquo; rule does not reach them. <em>(Brian's ruling.)</em>
+        <br><br>
+        <strong>How it surfaced.</strong> The first Leander read scored four identical Karen Umphrey claim pulses
+        as a duplicates miss. Brian challenged it &mdash; he couldn't see them, because they sit in Done 2026
+        behind 500+ items. They were real, but the scoring was wrong: a full-board scan found <strong>10 claims
+        with multiple copies and 25 redundant pulses</strong>, one claim copied six times with four landing inside
+        39 seconds, every copy unowned. That is an EMMA integration artifact spanning months, not board hygiene.
+        Damage claims were already excluded from Updates with Context and Definition of Done for the same reason;
+        this closes the gap on the third criterion.
+        <br><br>
+        <strong>Applied to:</strong> scrum-check skill, Manager Reference Sheet, Training Module, Board Fix-It
+        Checklist, glossary (both copies), and the duplicate-archive memory ruling. Logged to
+        <code>pattern_watch</code> as <code>emma-damage-claim-duplicate-pulses</code>.
+        <br><br>
+        <strong>Leander read, first under v1.5:</strong> board <strong>54 of 60 (90%, A, PASS)</strong> &mdash;
+        Frank 56, Garrison 54, both clear the line. Worth noting the board moved <em>during</em> the read: a
+        7:50 AM snapshot scored 46, and by 8:45 both managers had filled five blank Daily LOWs, emptied the Inbox
+        and added a Happiness pulse. Remaining gap is sales &mdash; seven block pulses with no current update,
+        two untouched since 2025.
+        <span class="next">Next: pin live reads to a fixed time of day so the score isn't a moving target; route the EMMA duplicate-claim defect to Matisen.</span>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-date">8/27/2026</div>
+      <div class="log-body">
+        <strong>Certification deadline extended to Monday 8/31.</strong> Brian's call. The v1.5 rubric landed
+        mid-cohort on 8/26 and forced a re-score of the two managers already certified, so holding the
+        remaining twelve to the original Thursday 8/27 date would have graded them against a bar that moved
+        under them. Four extra calendar days, same rubric, same 51-of-60 line &mdash; no change to what
+        certification requires.
+        <br><br>
+        The manager-facing announcement on the Delegation Board (pulse <code>12880694767</code>) carries the old
+        date in both its title and its body and needs both updated, otherwise the twelve outstanding managers
+        are working to 8/27.
+        <span class="next">Next: 12 boards to score, due Monday 8/31.</span>
+      </div>
+    </div>
 
     <div class="log-entry">
       <div class="log-date">8/26/2026 <span style="font-weight:400">· later same day</span></div>
@@ -449,9 +841,9 @@
         was absent from the reference sheet managers self-check against. Now printed on the sheet.
         <br><br>
         <strong>Brian's rulings.</strong> Certification line <strong>85% (51/60)</strong> — Calvin's 87% stands.
-        Recovery is 85%+ on two consecutive live reads. <strong>One miss is not a pattern</strong> — it logs a
+        Recovery is 85%+ on two consecutive live reads. <em>(Superseded 9/8/2026: live reads qualify at 80% and recovery is 80%+; mock certification stays 85%.)</em> <strong>One miss is not a pattern</strong> — it logs a
         redirect for the team, nothing more; recertification triggers on three misses inside any rolling four reads,
-        or two consecutive reads at 44 or below. Definition of Done moved into Fundamentals, Project Column into
+        or two consecutive reads at 33 or below (v1.6 translation). Definition of Done moved into Fundamentals, Project Column into
         Conscientious Details. Individuals scored on all twelve criteria out of 60, because an individual's pulses
         <em>are</em> the board. <strong>BMs clear two bars</strong> — their own score and their board's.
         Mock certifies, live maintains, weekly. Empty Later group and no QG pulses owned are both misses.
